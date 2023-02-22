@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>O projektu – Nevigace</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Nevigace dává uživateli možnost zkusit si projít realitu nezávisle na strukturách on-line map, podle kterých běžně vnímáme reálný prostor." />
+    <meta name="keywords" content="mapa, mapy, navigace, vizualove, umělecký projekt, studentský projekt, vizuální design, spekulativní grafický design" />
+    <meta name="author" content="Terezie Hodanová, Tereza Pöthe" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#2d1353">
+    <meta name="msapplication-TileColor" content="#2d1353">
+    <meta name="theme-color" content="#1C0221">
+
+     <script src="vunit.js"></script>
+
+     <!-- Instantiate vUnit.js passing a CSSMap with properties you want to play with -->
+     <script>
+       new vUnit({
+         CSSMap: {
+           // The selector (vUnit will create rules ranging from .selector1 to .selector100)
+           '.vh_height': {
+             // The CSS property (any CSS property that accepts px as units)
+             property: 'height',
+             // What to base the value on (vh, vw, vmin or vmax)
+             reference: 'vh'
+           },
+           '.vw_width': {
+             property: 'width',
+             reference: 'vw'
+           },
+           '.vh_font-size': {
+             property: 'font-size',
+             reference: 'vh'
+           },
+         },
+         onResize: function() {}
+       }).init();
+     </script>
+
+</head>
+<body>
+  <main>
+
+    <div class="layer2"></div>
+
+    <div class="layer3">
+        <div class="box3">
+            <h1>Proč <p2>Nevigace</p2>?</h1>
+              <p>Mapy nejsou plnohodnotná reprezentace reality. Jsou výběrové, zjednodušující a&nbsp;často obsahují spoustu chyb. (Kolik lidí už sjelo se srázu, protože až příliš důvěřovali navigaci!)
+              Projekt <p2>Nevigace</p2> vznikl jako pokus prověřit pravidla a&nbsp;struktury, které skrz on-line mapy pronikly do našeho vnímání reálného prostoru.</p>
+              <br><br>
+            <h1>Jak vyrazit na cestu?</h1>
+              <p>Vygenerovanou trasu si stáhnete jako GPX soubor, který si můžete otevřít ve své oblíbené trackovací aplikaci. My doporučujeme <p3 onclick="window.open('https://www.bergfex.cz/apps/','_blank')">Bergfex Touren</p3>, ve kterém si můžete tuto trasu otevřít jako referenční a&nbsp;poté nahrávat, kudy doopravdy jdete.
+              <br><br>
+              Během výletu prosím dbejte na své bezpečí, dodržujte zákony a&nbsp;buďte ohleduplní k&nbsp;přírodě. Doporučujeme vám vybavit se sportovní obuví a&nbsp;pohodlným oblečením. Berte na vědomí, že trasa může být časově náročnější, než byste očekávali, proto předem zvažte její délku. <p2>Nevigaci</p2> prosím nepoužívejte pro výlety v&nbsp;Tatrách, nepotřebují tam další mrtvé Čechy.</p>
+              <br><br>
+            <h1>Obecně o projektu</h1>
+              <p><p2>Nevigace</p2> vznikla v&nbsp;rámci zimních klauzur 2021/2022 v&nbsp;ateliéru <p3 onclick="window.open('https://fud.ujep.cz/ateliery/vizualni-design/','_blank')">Vizuálního designu</p3> FUD UJEP. Autorkami jsou <p3 onclick="window.open('https://www.instagram.com/te.ma.ho.graphic/','_blank')">Terezie&nbsp;Hodanová</p3> a&nbsp;<p3 onclick="window.open('https://www.instagram.com/vizualniterapie/','_blank')">Tereza&nbsp;Pöthe</p3>. Obrovský dík patří Filipu Richterovi za nadšenou pomoc s&nbsp;JavaScriptem! Na <p2>Nevigaci</p2> stále pracujeme, proto se omlouváme za případné nedostatky. Pokud by vás zajímalo více z&nbsp;procesu jejího vzniku, najdete to <p3 onclick="window.open('proces.html','_blank')">zde</p3>.
+              Momentálně nefunguje nastavení vzdálenosti a&nbsp;exportuje se .geojson soubor.</p>
+        </div>
+    </div>
+
+    <ul id="tlacitkatrasa">
+      <li><button class="button-ig" id="zpet" onclick="zpet();">
+          &#8249;
+      </button></li>
+
+      <li><button class="button-ig" id="ig" button onclick="window.open('https://www.instagram.com/nevigace/','_blank')">
+          <a href="#" class="fa fa-instagram"></a>
+           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      </button></li>
+    </ul>
+
+    <img src="sources/logo.png" id="logo">
+
+    <div id='map'></div>
+
+  </main>
+</body>
+<script src="uvod.js"></script>
+</html>

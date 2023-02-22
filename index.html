@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Nevigace</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Nevigace dává uživateli možnost zkusit si projít realitu nezávisle na strukturách on-line map, podle kterých běžně vnímáme reálný prostor." />
+  <meta name="keywords" content="mapa, mapy, navigace, vizualove, umělecký projekt, studentský projekt, vizuální design, spekulativní grafický design" />
+  <meta name="author" content="Terezie Hodanová, Tereza Pöthe" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
+  <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#2d1353">
+  <meta name="msapplication-TileColor" content="#2d1353">
+  <meta name="theme-color" content="#1C0221">
+
+   <script src="vunit.js"></script>
+
+   <script>
+     new vUnit({
+       CSSMap: {
+         // The selector (vUnit will create rules ranging from .selector1 to .selector100)
+         '.vh_height': {
+           // The CSS property (any CSS property that accepts px as units)
+           property: 'height',
+           // What to base the value on (vh, vw, vmin or vmax)
+           reference: 'vh'
+         },
+         '.vw_width': {
+           property: 'width',
+           reference: 'vw'
+         },
+         '.vh_font-size': {
+           property: 'font-size',
+           reference: 'vh'
+         },
+         '.vh_font-size': {
+           property: 'font-size',
+           reference: 'vh'
+         },vh_
+       },
+       onResize: function() {}
+     }).init();
+   </script>
+
+</head>
+<body>
+  <main>
+
+    <div class="layer2"></div>
+
+    <div class="layer3">
+        <div class="box2">
+            <h1><br>Pojď se projít realitou pomocí <p2>#nevigace</p2>!</h1>
+        </div>
+    </div>
+
+    <div class="layer3">
+        <button class="button" id="zacit" onclick="window.location.href='vyber.html';">
+          Začít
+        </button>
+    </div>
+
+    <img src="sources/logo.png" id="logo-uvod">
+
+    <div id='map'></div>
+
+  </main>
+</body>
+<script src="uvod.js"></script>
+</html>

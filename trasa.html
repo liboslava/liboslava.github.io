@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Vaše trasa – Nevigace</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Nevigace dává uživateli možnost zkusit si projít realitu nezávisle na strukturách on-line map, podle kterých běžně vnímáme reálný prostor." />
+    <meta name="keywords" content="mapa, mapy, navigace, vizualove, umělecký projekt, studentský projekt, vizuální design, spekulativní grafický design" />
+    <meta name="author" content="Terezie Hodanová, Tereza Pöthe" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#2d1353">
+    <meta name="msapplication-TileColor" content="#2d1353">
+    <meta name="theme-color" content="#1C0221">
+
+    <script src="vunit.js"></script>
+
+     <!-- Instantiate vUnit.js passing a CSSMap with properties you want to play with -->
+    <script>
+       new vUnit({
+         CSSMap: {
+           // The selector (vUnit will create rules ranging from .selector1 to .selector100)
+           '.vh_height': {
+             // The CSS property (any CSS property that accepts px as units)
+             property: 'height',
+             // What to base the value on (vh, vw, vmin or vmax)
+             reference: 'vh'
+           },
+           '.vw_width': {
+             property: 'width',
+             reference: 'vw'
+           },
+           '.vh_font-size': {
+             property: 'font-size',
+             reference: 'vh'
+           },
+         },
+         onResize: function() {}
+       }).init();
+    </script>
+
+    <script src="load_map_images.js"></script>
+   	<script src="generator_trasy.js"></script>
+
+</head>
+<body>
+  <main>
+
+    <div class="layer3">
+        <div class="box">
+            <p>Dokážeš zdolat překážky, které ti nastolila tato trasa? Vyraž na cestu podle <p2>#nevigace</p2> a&nbsp;sdílej s&nbsp;námi, zda tě mapy omezují ve svobodném pohybu!</p>
+        </div>
+    </div>
+
+    <ul id="tlacitkatrasa">
+        <li><button class="button-ig" id="zpet" button onclick="window.location.href='index.html';">
+          &#8249;
+        </button></li>
+
+        <li><button class="button-ig" id="my" onclick="onas();">
+          ?
+        </button></li>
+
+        <li><button class="button-ig" id="ig" button onclick="window.open('https://www.instagram.com/nevigace/','_blank')">
+          <a href="#" class="fa fa-instagram"></a>
+           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        </button></li>
+    </ul>
+
+    <div class="layer3">
+      <button class="button" id="stahujjson">
+        Stáhnout
+      </button>
+      <a id="export_link"/>
+    </div>
+
+    <img src="sources/logo.png" id="logo">
+
+    <div id='map'></div>
+
+  </main>
+</body>
+<script src="trasa.js"></script>
+</html>
